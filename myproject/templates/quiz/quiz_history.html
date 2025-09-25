@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}My Quiz History{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+<h2 class="fw-bold mb-4 text-primary"> My Quiz History</h2>
+  
+  {% if history %}
+
+  <table class="table table-bordered table-striped shadow-sm">
+    <thead class="table-dark">
+        <tr>
+          <th>Quiz</th>
+          <th>Score</th>
+          <th>Total Questions</th>
+          <th>Date Attempted</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        {% for result in history %}
+        <tr>
+
+          <td>{{ result.quiz.title }}</td>
+          <td>
+
+            {% if result.score == result.total_questions %}
+              <span class="text-success fw-bold">{{ result.score }}</span>
+
+            {% else %}
+              {{ result.score }}
+
+            {% endif %}
+          </td>
+
+          <td>{{ result.total_questions }}</td>
+          <td>{{ result.date|date:"M d, Y - H:i" }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+  {% else %}
+    <div class="alert alert-info">You haven’t attempted any quizzes yet.</div>
+
+  {% endif %}
+</div>
+{% endblock %}

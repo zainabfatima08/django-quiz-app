@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+
+  <!-- 🔍 Search Bar -->
+
+  <h2 class="text-center mb-4 text-primary fw-bold">Available Quizzes</h2>
+
+  <form method="get" class="mb-5 d-flex justify-content-center">
+
+    <input type="text" name="q" class="form-control search-input me-2"
+          placeholder="Search quizzes..." value="{{ query|default:'' }}">
+
+    <button class="btn btn-custom" type="submit">Search</button>
+  </form>
+
+  <!-- Quiz List -->
+
+  <div class="row" id="quizList">
+
+    {% if quizzes %}
+
+      {% for quiz in quizzes %}
+
+      <div class="col-md-4 d-flex align-items-stretch">
+        <div class="card shadow-lg mb-4 quiz-card w-100">
+          <div class="card-body d-flex flex-column">
+
+              <h5 class="card-title">{{ quiz.title }}</h5>
+              <p class="card-text text-muted mb-4">
+
+                {{ quiz.questions.count }} Questions
+              </p>
+
+              <a href="{% url 'quiz_detail' quiz.id %}" class="btn btn-primary mt-auto w-100">
+                Start Quiz
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+    {% endfor %}
+
+    {% else %}
+
+    {% if query %}.
+
+      <div class="alert alert-warning text-center w-100">
+          No quizzes found for "<strong>{{ query }}</strong>".
+      </div>
+
+    {% else %}
+
+        <p class="text-center">No quizzes available yet.</p>
+
+    {% endif %}
+
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Hero Section -->
+
+<div class="container my-5">
+  <div class="row align-items-center">
+    
+    <!-- Left Text Content -->
+
+    <div class="col-md-6">
+
+      <h1 class="display-4 fw-bold mb-4">
+  <span class="text-dark">Manage Your Tech</span><br>
+  <span class="text-primary">Quiz Smarter</span>
+</h1>
+
+      <p class="lead text-muted mt-3">
+        Sharpen your skills with interactive quizzes. Track your progress, challenge yourself, and become a pro in <strong>Python</strong>, <strong>Django</strong>, and more!
+      </p>
+
+      <div class="mt-4">
+        <a href="{% url 'quiz_list' %}" class="btn btn-primary btn-lg me-3">Get Started</a>
+
+  {% if not user.is_authenticated %}
+        <a href="{% url 'signup' %}" class="btn btn-outline-primary btn-lg">Sign Up</a>
+ {% endif %}
+
+      </div>
+    </div>
+
+    <!-- Right Image -->
+
+    <div class="col-md-6 text-center">
+
+      <img src="{% static 'quiz.png' %}" alt="Quiz Illustration" class="img-fluid" style="max-width: 500px;">
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Features Section -->
+
+<section class="py-5">
+  <div class="container text-center">
+
+    <h2 class="fw-bold mb-4">About Tech Quiz App</h2>
+    <p class="mb-7">
+      Django Quiz App is your platform to challenge, learn, and grow. With interactive quizzes, real-time results, and progress tracking,
+      we make learning Python and Django engaging and fun.
+    </p>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+
+        <div class="feature-box text-dark p-4 rounded h-100">
+
+          <h4 class="fw-bold text-primary">Multiple Quizzes</h4>
+          <p class="mt-2">
+            Choose from a variety of quizzes across Python, Django, and web development topics.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+
+        <div class="feature-box text-dark p-4 rounded h-100">
+
+          <h4 class="fw-bold text-success">Instant Results</h4>
+          <p class="mt-2">
+            Submit answers and instantly see your score along with correct solutions.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+
+        <div class="feature-box text-dark p-4 rounded h-100">
+
+          <h4 class="fw-bold text-danger">Track Progress</h4>
+          <p class="mt-2">
+            Logged-in users can save quiz history and monitor their progress over time.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+   <div class="cta-button mt-4">
+
+  <a href="{% url 'contact' %}" class="btn-get-in-touch">Get in Touch</a>
+</div>
+
+</section>
+
+<!-- Call to Action -->
+
+<section class="knowledge-banner">
+
+    <div class="banner-content">
+
+        <h2 class="knowledge">🎯 Ready to Test Your Knowledge?</h2>
+        <p>Join now and challenge yourself with exciting quizzes that sharpen your skills!</p>
+    
+    {% if user.is_authenticated %}
+      <a href="{% url 'quiz_list' %}" class="start-btn">Start Now</a>
+
+    {% else %}
+      <a href="{% url 'signup' %}" class="create-btn">Create Account</a>
+
+    {% endif %}
+
+  </div>
+
+</section>
+
+{% endblock %}
+
+{% block footer %}
+
+<!-- Footer Section -->
+
+<footer class="bg-light text-center text-lg-start mt-5 border-top">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4">
+
+        <h5 class="text-uppercase fw-bold text-primary">Django Quiz App</h5>
+        <p class="text-muted">
+          Test your knowledge in Python, Django, and web development. 
+          Stay motivated and keep learning every day with fun quizzes.
+        </p>
+
+      </div>
+  
+{% endblock %}
+
+

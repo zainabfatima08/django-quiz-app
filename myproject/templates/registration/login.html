@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="card p-4 shadow-lg border-0 rounded-3" style="width: 400px;">
+
+    <h2 class="text-center mb-4">Login</h2>
+
+    <!-- Django messages -->
+    {% if messages %}
+      {% for message in messages %}
+
+        <div class="alert alert-{{ message.tags }} mt-2">{{ message }}</div>
+
+      {% endfor %}
+    {% endif %}
+
+    <!-- Login Form -->
+
+    <form method="post" class="text-start">
+      {% csrf_token %}
+
+      <!-- Username -->
+
+      <div class="mb-3">
+        <label for="id_username" class="form-label">Username</label>
+        <input type="text" name="username" maxlength="150" autofocus required id="id_username" class="form-control">
+      </div>
+
+      <!-- Password -->
+
+      <div class="mb-3">
+        <label for="id_password" class="form-label">Password</label>
+        <input type="password" name="password" required id="id_password" class="form-control">
+      </div>
+
+      <!-- Remember Me -->
+
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="rememberMe">
+        <label class="form-check-label" for="rememberMe">Remember me</label>
+      </div>
+
+      <!-- Submit -->
+
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+
+    <!-- Sign Up -->
+
+    <div class="text-center mt-3">
+      <small>Not a member? <a href="{% url 'signup' %}">Sign up now</a></small>
+    </div>
+  </div>
+  
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+
+<div class="quiz-container">
+
+  <h2>Your Results </h2>
+  <p><strong>Score:</strong> {{ score }}/{{ total }}</p>
+  <hr>
+
+  {% for r in results %}
+
+    <div class="mb-4">
+    <p><strong>{{ forloop.counter }}. {{ r.question.question_text }}</strong></p>
+
+  {% if r.is_correct %}
+
+      <p class="text-success"> Correct! Your answer: {{ r.selected.choice_text }}</p>
+
+  {% else %}
+
+  {% if r.selected %}
+
+          <p class="text-danger"> Incorrect. You chose: {{ r.selected.choice_text }}</p>
+
+  {% else %}
+
+          <p class="text-danger"> You didn’t answer this question.</p>
+
+  {% endif %}
+
+        <p class="text-primary">✔ Correct answer: {{ r.correct.choice_text }}</p>
+
+  {% endif %}
+    </div>
+    <hr>
+
+  {% endfor %}
+
+  <a href="{% url 'quiz_list' %}" class="btn btn-outline-primary">Back to Quizzes</a>
+</div>
+
+{% endblock %}
+
+</html>

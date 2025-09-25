@@ -1,0 +1,305 @@
+/* Base page look */
+
+body {
+  background: #f4f7fb;
+  color: #222;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Custom navbar*/
+
+.custom-navbar {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(37,117,252,0.08);
+}
+
+/* navbar links and brand color */
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: #ffffff !important;
+}
+
+.custom-navbar .nav-link:hover {
+  color: rgba(255,255,255,0.95) !important;
+}
+
+.navbar-light.custom-navbar .navbar-toggler-icon {
+  filter: invert(1) !important;
+}
+
+/* Card / quiz items styling  */
+
+.quiz-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+  background: #fff;
+}
+.quiz-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 40px rgba(50,50,93,0.12);
+}
+
+/* Feature box */
+
+.feature-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+.mt-4 {
+  margin-top: 1.5rem !important; /* Bootstrap default, can customize */
+  text-align: center; /* Center the button horizontally */
+}
+
+/* Container spacing */
+
+.cta-button {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Button styling */
+
+.btn-get-in-touch {
+  display: inline-block;
+  background-color: #072cff;
+  color: #ffffff;
+  padding: 10px 30px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+
+.btn-get-in-touch:hover {
+  background-color: #0065e0;
+  color: #fff;
+}
+
+/* Knowledge banner styling */
+
+.knowledge-banner {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
+    text-align: center;
+    padding: 80px 30px;
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+
+  }
+.knowledge{
+  color: #ffffff;
+}
+
+.start-btn {
+    background-color: #4400e2;
+    color: #ffffff;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(103, 113, 145, 0.4);
+}
+
+.start-btn:hover {
+    background-color: #5728ff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(7, 123, 255, 0.6);
+}
+.create-btn {
+    background-color: #4400e2;
+    color: #ffffff;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(103, 113, 145, 0.4);
+}
+
+.create-btn:hover {
+    background-color: #592cfe;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(7, 123, 255, 0.6);
+}
+
+/* quiz question boxstyling */
+
+.card {
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+.question-box {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-width: 750px;
+  }
+
+  .choice-item {
+    display: block;
+    align-items: center;
+    padding: 12px 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: 0.2s ease-in-out;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .choice-item:hover {
+    background-color: #e6f0ff;
+    border-color: #007bff;
+  }
+
+  .choice-item input[type="radio"] {
+    margin-right: 12px;
+    accent-color: #007bff;
+  }
+
+  @media (max-width: 576px) {
+    .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+ /* General Container Styling */
+.container {
+  max-width: 1300px;
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #262727;
+}
+
+/* 🔍 Search Bar */
+
+.search-input {
+  max-width: 400px;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+.btn-custom {
+  background-color: #3498db;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-custom:hover {
+  background-color: #217dbb;
+  color: #fff;
+}
+
+ /* 📋 Quiz Cards */
+
+.quiz-card {
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.quiz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-card .card-body {
+  padding: 25px;
+}
+
+.quiz-card .card-title {
+  color: #34495e;
+  font-size: 1.25rem;
+}
+
+.quiz-card .card-text {
+  font-size: 0.95rem;
+}
+
+/* Responsive Fix */
+
+@media (max-width: 768px) {
+  .search-input {
+    max-width: 100%;
+  }
+}
+
+/* Footer box styling */
+
+.footer-box {
+  background-color: #ffffff;      /* White background */
+  border-radius: 0;              /* No rounded corners (full width look) */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); /* Shadow above */
+  padding: 30px ;
+  margin-top: 30px;
+}
+
+/* Footer links */
+
+.footer-link {
+  color: #6c757d;  
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #000000;  
+  text-decoration: underline;
+}
+
+/* Footer headings */
+.footer h5,
+.footer h6 {
+  margin-bottom: 12px;
+}
+
+.footer-bottom {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  color: #ffffff;
+  font-size: 0.85rem;
+  padding: 12px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
